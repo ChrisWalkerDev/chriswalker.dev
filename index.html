@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property='og:title' content="Chris Walker Dev" />
+        <meta property='og:image' content="favicon.svg"/>
+        <meta property='og:description' content='Chris Walker Development Portfolio'/>
+        <meta property='og:url' content='chriswalker.dev'/>
+        <title>Chris Walker Dev</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg"/>
+        <style>
+            html, body {
+                color: #bbb;
+                min-width: 375px;
+                background-color: #fff;
+            }
+            @media (min-width: 375px) and (max-width: 992px) {
+                .navbar-brand-desktop  {
+                    display: none;
+                }
+                .content-container {
+                    height: calc(100vh - 56px);
+                }
+            }
+            @media (min-width: 992px) {
+                .navbar-brand-mobile  {
+                    display: none;
+                }
+                .content-container {
+                    height: calc(100vh - 66px);
+                }
+            }
+            @media (max-width: 375px) {
+                .navbar-brand-desktop  {
+                    display: none;
+                }
+                .content-container {
+                    height: calc(100vh - 71px);
+                }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand navbar-brand-desktop" href="">
+                    <img src="resources/header_desktop.svg" height="40" width="40" alt="Chris Walker Dev Header Icon">
+                </a>
+                <a class="navbar-brand-mobile flex-fill" href="">
+                    <div class="d-flex justify-content-center">
+                        <img src="resources/header_mobile.svg" height="40" width="100%" alt="Chris Walker Dev Header Icon">
+                    </div>
+                </a>
+            </div>
+        </nav>
+        <div class="content-container d-flex justify-content-center align-items-center">
+            <img src="resources/building_web_apps.jpg" height="300" width="240" alt="Chris Walker Dev Header Icon">
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>
+</html>
