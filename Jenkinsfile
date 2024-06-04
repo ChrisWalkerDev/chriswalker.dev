@@ -1,5 +1,9 @@
 pipeline {
-    agent { dockerfile true }
+    agent { 
+        dockerfile {
+            args '-t chriswalker.dev'
+        }
+    }
     stages {
         stage('Test') {
             steps {
