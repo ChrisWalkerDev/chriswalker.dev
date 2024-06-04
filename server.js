@@ -1,12 +1,11 @@
 import express from "express";
 
-const PORT = process.env.PORT || 8080;
 const app = express();
+const env = process.env.NODE_ENV;
+const PORT = process.env.PORT || 8080;
 
-app.get("/", (req, res) => {
-    res.json({message: "App is running.."});
-});
+app.use(express.static('src'))
 
 app.listen(PORT, () => {
-    console.log(`App running on ${PORT}`);
+    console.log(`App running on ${PORT} in ${env}`);
 });
