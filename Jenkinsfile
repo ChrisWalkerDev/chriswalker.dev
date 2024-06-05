@@ -6,7 +6,7 @@ node {
     }
 
     stage('Build') {
-        app = docker.build("chriswalker.dev/chriswalker.dev")
+        app = docker.build("chriswalker.dev/chriswalker.dev:v" + currentBuild.number)
     }
 
     stage('Test') {
