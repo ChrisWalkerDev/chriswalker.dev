@@ -11,12 +11,12 @@ node {
 
     stage('Test') {
         app.inside {
-            sh 'TODO'
+            // TODO
         }
     }
 
     stage('Push image') {
-        sh 'TODO"'
+        // TODO
     }
 
 }
