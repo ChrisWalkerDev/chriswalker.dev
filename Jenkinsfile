@@ -6,7 +6,7 @@ node {
     }
 
     stage('Build') {
-        app = docker.build("chriswalker.dev/chriswalker.dev:v" + currentBuild.number)
+        app = docker.build("chriswalker.dev:v" + currentBuild.number)
     }
 
     stage('Test') {
@@ -15,7 +15,11 @@ node {
         }
     }
 
-    stage('Push image') {
+    stage('Save Image') {
+        sh "/usr/local/bin/save_image.sh chriswalker.dev:v" + currentBuild.number
+    }
+
+    stage('Deploy Image') {
         // TODO
     }
 
