@@ -19,6 +19,10 @@ node {
         sh "/usr/local/bin/save_image.sh chriswalker.dev:v" + currentBuild.number
     }
 
+    stage('Delete Old Images') {
+        sh "/usr/local/bin/delete_old.sh chriswalker.dev"
+    }
+
     stage('Deploy Image') {
         // TODO
     }
