@@ -40,7 +40,7 @@ node {
     }
 
     stage('Deploy Image') {
-        // TODO
+        sh "/usr/local/bin/install_image.sh 8080:8080 v" +currentBuild.number + " chriswalker.dev:v" + currentBuild.number
     }
 
 }
