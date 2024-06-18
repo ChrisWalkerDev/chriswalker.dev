@@ -15,20 +15,28 @@ node {
         }
     }
 
-    stage('Save Image') {
+    stage('Save Image to Archive') {
         sh "/usr/local/bin/save_image.sh chriswalker.dev:v" + currentBuild.number
     }
 
-    stage('Install New Image') {
-        sh "/usr/local/bin/install_image.sh chriswalker.dev:v" + currentBuild.number
+    stage('Delete Local Previous Images') {
+        sh "/usr/local/bin/clean_local_images.sh chriswalker.dev"
     }
 
-    stage('Delete Old Images') {
+    stage('Delete Previous Archived Images') {
         sh "/usr/local/bin/delete_old.sh chriswalker.dev"
     }
 
-    stage('Remove existing container') {
+    stage('Delete Remote Existing Container') {
         sh "/usr/local/bin/stop_previous_image.sh chriswalker.dev"
+    }
+
+    stage('Delete Remote Images') {
+        sh "/usr/local/bin/clean_remote_images.sh chriswalker.dev"
+    }
+
+    stage('Install New Image on Remote') {
+        sh "/usr/local/bin/install_image.sh chriswalker.dev:v" + currentBuild.number
     }
 
     stage('Deploy Image') {
