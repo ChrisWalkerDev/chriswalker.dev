@@ -27,6 +27,10 @@ node {
         sh "/usr/local/bin/delete_old.sh chriswalker.dev"
     }
 
+    stage('Remove existing container') {
+        sh "/usr/local/bin/stop_previous_image.sh chriswalker.dev"
+    }
+
     stage('Deploy Image') {
         // TODO
     }
