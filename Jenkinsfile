@@ -44,7 +44,7 @@ node {
     }
 
     stage('Verify Image') {
-        sleep(time: 0, unit:"SECONDS")
+        sleep(time: 10, unit:"SECONDS")
         sh "/usr/local/bin/verify_image.sh https://chriswalker.dev/version v" + currentBuild.number
     }
 
