@@ -43,4 +43,9 @@ node {
         sh "/usr/local/bin/deploy.sh 8080:8080 v" +currentBuild.number + " chriswalker.dev:v" + currentBuild.number
     }
 
+    stage('Verify Image') {
+        sleep(time: 0, unit:"SECONDS")
+        sh "/usr/local/bin/verify_image.sh https://chriswalker.dev/version v" + currentBuild.number
+    }
+
 }
