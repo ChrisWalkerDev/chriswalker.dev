@@ -40,7 +40,7 @@ node {
 
     stage('Verify Image') {
         sleep(time: 10, unit:"SECONDS")
-        sh "/usr/local/bin/verify_image.sh https://" + appName + "/version v" + currentBuild.number
+        sh "/usr/local/bin/verify_image.sh https://" + appName + "/version " + currentBuild.number
     }
 
 }
