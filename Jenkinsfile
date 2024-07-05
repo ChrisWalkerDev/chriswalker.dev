@@ -23,7 +23,7 @@ node {
     }
 
     stage('Delete Remote Existing Container') {
-        sh "/usr/local/bin/stop_previous_image.sh '" + appName + "'"
+        sh "/usr/local/bin/stop_previous_image.sh ' " + appName + "'"
     }
 
     stage('Delete Remote Images') {
