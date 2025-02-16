@@ -23,7 +23,7 @@ node {
     }
 
     stage('Delete Remote Images') {
-        sh "/usr/local/bin/clean_remote_images.sh " + appName
+        sh "~/scripts/clean_remote_images.sh " + appName
     }
 
     /* stage('Install New Image on Remote') {
