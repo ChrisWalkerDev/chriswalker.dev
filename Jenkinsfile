@@ -10,11 +10,11 @@ node {
         app = docker.build(appName + ":v" + currentBuild.number)
     }
 
-    /* stage('Save Image to Archive') {
-        sh "/usr/local/bin/save_image.sh " + appName + ":v" + currentBuild.number
+    stage('Save Image to Archive') {
+        sh "~/scripts/save_image.sh " + appName + ":v" + currentBuild.number
     }
 
-    stage('Delete Local Previous Images') {
+    /* stage('Delete Local Previous Images') {
         sh "/usr/local/bin/clean_local_images.sh "+ appName
     }
 
