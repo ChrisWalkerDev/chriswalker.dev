@@ -18,11 +18,11 @@ node {
         sh "~/scripts/delete_old.sh " + appName
     }
 
-    /* stage('Delete Remote Existing Container') {
-        sh "/usr/local/bin/stop_previous_image.sh ' " + appName + "'"
+    stage('Delete Remote Existing Container') {
+        sh "~/scripts/stop_previous_image.sh ' " + appName + "'"
     }
 
-    stage('Delete Remote Images') {
+    /* stage('Delete Remote Images') {
         sh "/usr/local/bin/clean_remote_images.sh " + appName
     }
 
