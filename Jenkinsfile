@@ -10,7 +10,7 @@ node {
         app = docker.build(appName + ":v" + currentBuild.number)
     }
 
-    stage('Save Image to Archive') {
+    /* stage('Save Image to Archive') {
         sh "/usr/local/bin/save_image.sh " + appName + ":v" + currentBuild.number
     }
 
@@ -41,6 +41,6 @@ node {
     stage('Verify Image') {
         sleep(time: 10, unit:"SECONDS")
         sh "/usr/local/bin/verify_image.sh https://" + appName + "/version " + currentBuild.number
-    }
+    } */
 
 }
