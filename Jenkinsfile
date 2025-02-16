@@ -26,11 +26,11 @@ node {
         sh "~/scripts/clean_remote_images.sh " + appName
     }
 
-    /* stage('Install New Image on Remote') {
-        sh "/usr/local/bin/install_image.sh " + appName + ":v" + currentBuild.number
+    stage('Install New Image on Remote') {
+        sh "~/scripts/install_image.sh " + appName + ":v" + currentBuild.number
     }
 
-    stage('Deploy Image') {
+    /* stage('Deploy Image') {
         sh "/usr/local/bin/deploy.sh 8080:8080 " + currentBuild.number + " " + appName + ":v" + currentBuild.number
     }
 
