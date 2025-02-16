@@ -13,16 +13,12 @@ node {
     stage('Save Image to Archive') {
         sh "~/scripts/save_image.sh " + appName + ":v" + currentBuild.number
     }
-
-    /* stage('Delete Local Previous Images') {
-        sh "/usr/local/bin/clean_local_images.sh "+ appName
-    }
-
+    
     stage('Delete Previous Archived Images') {
-        sh "/usr/local/bin/delete_old.sh " + appName
+        sh "~scripts/delete_old.sh " + appName
     }
 
-    stage('Delete Remote Existing Container') {
+    /* stage('Delete Remote Existing Container') {
         sh "/usr/local/bin/stop_previous_image.sh ' " + appName + "'"
     }
 
