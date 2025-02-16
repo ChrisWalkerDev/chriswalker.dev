@@ -30,13 +30,13 @@ node {
         sh "~/scripts/install_image.sh " + appName + ":v" + currentBuild.number
     }
 
-    /* stage('Deploy Image') {
-        sh "/usr/local/bin/deploy.sh 8080:8080 " + currentBuild.number + " " + appName + ":v" + currentBuild.number
+    stage('Deploy Image') {
+        sh "~/scripts/deploy.sh 8500:8080 " + currentBuild.number + " " + appName + ":v" + currentBuild.number
     }
 
     stage('Verify Image') {
         sleep(time: 10, unit:"SECONDS")
-        sh "/usr/local/bin/verify_image.sh https://" + appName + "/version " + currentBuild.number
-    } */
+        sh "~/scripts/verify_image.sh https://" + appName + "/version " + currentBuild.number
+    }
 
 }
