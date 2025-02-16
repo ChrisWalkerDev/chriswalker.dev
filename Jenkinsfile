@@ -13,10 +13,6 @@ node {
     stage('Save Image') {
         sh "~/scripts/save_image.sh " + appName + ":v" + currentBuild.number
     }
-
-    stage('Install New Image on Remote and Move Image to Archive') {
-        sh "~/scripts/install_image.sh " + appName + ":v" + currentBuild.number
-    }
     
     stage('Delete Previous Archived Images') {
         sh "~/scripts/delete_old.sh " + appName
@@ -28,6 +24,10 @@ node {
 
     stage('Delete Remote Images') {
         sh "~/scripts/clean_remote_images.sh " + appName
+    }
+    
+    stage('Install New Image on Remote and Move Image to Archive') {
+        sh "~/scripts/install_image.sh " + appName + ":v" + currentBuild.number
     }
 
     /* stage('Deploy Image') {
