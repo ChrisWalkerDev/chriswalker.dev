@@ -10,8 +10,12 @@ node {
         app = docker.build(appName + ":v" + currentBuild.number)
     }
 
-    stage('Save Image to Archive') {
+    stage('Save Image') {
         sh "~/scripts/save_image.sh " + appName + ":v" + currentBuild.number
+    }
+
+    stage('Install New Image on Remote and Move Image to Archive') {
+        sh "~/scripts/install_image.sh " + appName + ":v" + currentBuild.number
     }
     
     stage('Delete Previous Archived Images') {
@@ -24,10 +28,6 @@ node {
 
     stage('Delete Remote Images') {
         sh "~/scripts/clean_remote_images.sh " + appName
-    }
-
-    stage('Install New Image on Remote') {
-        sh "~/scripts/install_image.sh " + appName + ":v" + currentBuild.number
     }
 
     /* stage('Deploy Image') {
