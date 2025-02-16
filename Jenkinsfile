@@ -15,7 +15,7 @@ node {
     }
     
     stage('Delete Previous Archived Images') {
-        sh "~scripts/delete_old.sh " + appName
+        sh "~/scripts/delete_old.sh " + appName
     }
 
     /* stage('Delete Remote Existing Container') {
